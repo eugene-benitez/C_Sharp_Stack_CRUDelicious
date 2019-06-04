@@ -1,0 +1,45 @@
+@using CRUDelicious.Models
+@model Dishes
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUDelicious</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <center>
+                <h1>Welcome to CRUDelicious</h1>
+            </center>
+            <div style="display: block">
+            </div>
+            <br>
+            <center>
+            @foreach (var a in @ViewBag.Dish)
+            {
+                <h1>@a.Name</h1>
+                <h3>@a.Chef</h3>
+                <h2 style="border-bottom: 2px solid black"></h2>
+                <br>
+                <br>
+                <h3>@a.Description</h3>
+                <h3>@a.Tastiness</h3>
+                <h3>@a.Calories</h3>
+                <h3>@a.CreatedAt</h3>
+                <h3>@a.UpdatedAt</h3>
+                <br>
+                <a name="Delete" id="" class="btn btn-primary" href="delete/@a.id" role="button">Delete</a>
+                <a name="Edit" id="" class="btn btn-primary" href="edit/@a.id" role="button">Edit</a>
+            }
+            </center>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿@using CRUDelicious.Models
+@model Dishes
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUDelicious</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <center>
+                <h1>Welcome to CRUDelicious</h1>
+            </center>
+            <div style="display: block">
+            <h2>Check out some recent dishes! <a style="float:right;" href="new">Add a Dish</a></h2>
+            <h2 style="border-bottom: 2px solid black"></h2>
+            </div>
+            <br>
+            @for(int i = @ViewBag.AllDishes.Count-1; i >= 0 ; i --)
+            {
+                <h2><a href="@ViewBag.AllDishes[i].id">@ViewBag.AllDishes[i].Name</a> by @ViewBag.AllDishes[i].Chef</h2>
+
+            }
+        </div>
+    </div>
+
+</body>
+</html>

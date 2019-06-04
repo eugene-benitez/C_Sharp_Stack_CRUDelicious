@@ -1,0 +1,60 @@
+@using CRUDelicious.Models
+@model Dishes
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUDelicious</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <center>
+                <h1>Add a new Dish!</h1>
+            </center>
+            <div>
+            <h2><a style="float:left;" href="http://">Add a Dish</a></h2>
+            <br>
+            <br>
+            <form action="submit" method="post">
+                <div class="form-group">
+                    <span asp-validation-for="Name"></span>
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name">
+                    <br>
+
+                    <span asp-validation-for="Chef"></span>
+                    <label asp-for="Chef"></label>
+                    <input asp-for="Chef">
+                    <br>
+
+                    <span asp-validation-for="Tastiness"></span>
+                    <label asp-for="Tastiness"></label>
+                    <input asp-for="Tastiness">
+                    <br>
+
+                    <span asp-validation-for="Calories"></span>
+                    <label asp-for="Calories"></label>
+                    <input asp-for="Calories">
+                    <br>
+
+                    <span asp-validation-for="Description"></span>
+                    <label asp-for="Description"></label>
+                    <input asp-for="Description">
+
+                    <input type="hidden" name="CreatedAt" value="@ViewBag.Now">
+                    <input type="hidden" name="UpdatedAt" value="@ViewBag.Now">
+
+                </div>
+            <input type="submit" value="Add!">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
